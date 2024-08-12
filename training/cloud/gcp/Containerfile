@@ -1,0 +1,6 @@
+ARG BOOTC_IMAGE=registry.stage.redhat.io/rhelai1/bootc-nvidia-rhel9:latest
+FROM $BOOTC_IMAGE
+
+COPY cloud-setup.sh /tmp
+RUN /tmp/cloud-setup.sh && rm -f /tmp/cloud-setup.sh
+COPY files/ /
